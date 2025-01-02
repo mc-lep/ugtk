@@ -6,7 +6,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Authors>Mc-lep</Authors>
+		<Authors>mc-lep</Authors>
 		<Description>A library containing different universal utils for game development</Description>
 
 		<!-- PackageProjectUrl is different from the repository URL. It can be a documentation website or a website explaining the project -->
@@ -14,6 +14,7 @@
 
 		<!-- A list of tags to help the search engine to understand the content of the package -->
 		<PackageTags>game, library, development, tool, monogame, foster, fna, xna</PackageTags>
+		<PackageReadmeFile>../../README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -35,7 +36,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="icon.png" Pack="true" PackagePath=""/>
+		<None Include="icon.png" Pack="true" PackagePath="" />
 	</ItemGroup>
 
 	<ItemGroup>
