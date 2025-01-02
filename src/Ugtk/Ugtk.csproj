@@ -14,7 +14,6 @@
 
 		<!-- A list of tags to help the search engine to understand the content of the package -->
 		<PackageTags>game, library, development, tool, monogame, foster, fna, xna</PackageTags>
-		<PackageReadmeFile>$(SolutionDir)README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -32,10 +31,12 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
+		<None Include="..\..\README.md" Link="README.md" Pack="true" PackagePath="" />
 		<None Include="icon.png" Pack="true" PackagePath="" />
 	</ItemGroup>
 
