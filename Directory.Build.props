@@ -1,0 +1,52 @@
+<Project>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>disable</ImplicitUsings>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+		<CentralPackageVersionOverrideEnabled>false</CentralPackageVersionOverrideEnabled>
+		<RepoRoot>$([System.IO.Path]::GetDirectoryName($([MSBuild]::GetPathOfFileAbove('.gitignore', '$(MSBuildThisFileDirectory)'))))</RepoRoot>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<Product>U.G.T.K</Product>
+		<Company>mc-lep</Company>
+		<Copyright>mc-lep - $([System.DateTime]::Now.Year)</Copyright>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="$(MSBuildProjectName).Tests" />
+		<InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+	</ItemGroup>
+
+	<PropertyGroup Condition=" '$(IsPackable)' == 'true' ">
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<EnablePackageValidation>true</EnablePackageValidation>
+		<Authors>mc-lep</Authors>
+		<Description>A library containing different universal utils for game development</Description>
+		<PackageProjectUrl>https://github.com/mc-lep/ugtk</PackageProjectUrl>
+		<PackageTags>game, library, development, tool, monogame, foster, fna, xna</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>icon.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup Condition=" '$(IsPackable)' == 'true' ">
+		<None Include="..\..\README.md" Link="README.md" Pack="true" PackagePath="" />
+		<None Include="icon.png" Pack="true" PackagePath="" />
+
+		<PackageReference Include="MinVer" PrivateAssets="all" />
+		<PackageReference Include="DotNet.ReproducibleBuilds" PrivateAssets="all" />
+	</ItemGroup>
+
+	<ItemGroup Condition=" '$(IsTestProject)' == 'true' ">
+		<PackageReference Include="coverlet.collector" PrivateAssets="all" />
+		<PackageReference Include="NFluent" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" PrivateAssets="all" />
+		<PackageReference Include="xunit" PrivateAssets="all" />
+		<PackageReference Include="xunit.runner.visualstudio" PrivateAssets="all" />
+	</ItemGroup>
+</Project>

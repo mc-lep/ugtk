@@ -1,4 +1,4 @@
-﻿using FluentAssertions;
+﻿using NFluent;
 using System;
 using Ugtk.Collections;
 
@@ -15,11 +15,11 @@ namespace Ugtk.Tests.Collections
 
             // Act
 
-            Action action = () => sut.RemoveAt(index);
+            void action() => sut.RemoveAt(index);
 
             // Assert
 
-            action.Should().Throw<IndexOutOfRangeException>();
+            Check.ThatCode(action).Throws<IndexOutOfRangeException>();
         }
 
         [Fact]
@@ -33,7 +33,7 @@ namespace Ugtk.Tests.Collections
 
             // Assert
 
-            sut.Should().HaveCount(9);
+            Check.That(sut).ContainsExactly(0, 1, 2, 3, 4, 9, 6, 7, 8);
         }
 
         [Fact]
@@ -47,7 +47,7 @@ namespace Ugtk.Tests.Collections
 
             // Assert
 
-            sut.Should().HaveElementAt(5, 9);
+            Check.That(sut).ContainsExactly(0, 1, 2, 3, 4, 9, 6, 7, 8);
         }
 
         private static Bag<int> BuildBag()
