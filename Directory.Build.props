@@ -4,13 +4,13 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>disable</ImplicitUsings>
 	</PropertyGroup>
-	
+
 	<PropertyGroup>
 		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 		<CentralPackageVersionOverrideEnabled>false</CentralPackageVersionOverrideEnabled>
 		<RepoRoot>$([System.IO.Path]::GetDirectoryName($([MSBuild]::GetPathOfFileAbove('.gitignore', '$(MSBuildThisFileDirectory)'))))</RepoRoot>
 	</PropertyGroup>
-	
+
 	<PropertyGroup>
 		<Product>U.G.T.K</Product>
 		<Company>mc-lep</Company>
@@ -22,8 +22,8 @@
 		<InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
 	</ItemGroup>
 
-	<PropertyGroup Condition=" '$(IsPackable)' == 'true' ">
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	<PropertyGroup Condition=" '$(IsPackable)' == 'true' " Label="Packaging">
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<EnablePackageValidation>true</EnablePackageValidation>
 		<Authors>mc-lep</Authors>
 		<Description>A library containing different universal utils for game development</Description>
