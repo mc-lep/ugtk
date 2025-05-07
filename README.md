@@ -1,6 +1,6 @@
 # Universal Game Tool Kit
 
-## This package contains utilities I use to build C# games :
+## This package contains utilities I use to build C# games user FosterFramework :
 
 ### Collections
 
