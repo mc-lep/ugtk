@@ -6,7 +6,7 @@ using NFluent;
 
 namespace Ugtk.Tests.Collections
 {
-    public sealed class Array2dTests
+    public sealed class Grid2Tests
     {
         [Theory]
         [InlineData(3, 2)]
@@ -15,7 +15,7 @@ namespace Ugtk.Tests.Collections
         public void Constructor_ShouldInitializeArray_WithCorrectDimensions(int columns, int rows)
         {
             // Act
-            var array2d = new Array2d<int>(columns, rows);
+            var array2d = new Grid2<int>(columns, rows);
 
             // Assert
             Check.That(array2d.ColumnsCount).IsEqualTo(columns);
@@ -29,7 +29,7 @@ namespace Ugtk.Tests.Collections
         public void Constructor_ShouldThrowArgumentException_WhenDimensionsAreInvalid(int columns, int rows)
         {
             // Act & Assert
-            Check.ThatCode(() => new Array2d<int>(columns, rows))
+            Check.ThatCode(() => new Grid2<int>(columns, rows))
                 .Throws<ArgumentException>();
         }
 
@@ -37,7 +37,7 @@ namespace Ugtk.Tests.Collections
         public void Indexer_ShouldSetAndGetValuesCorrectly()
         {
             // Arrange
-            var array2d = new Array2d<string>(2, 2);
+            var array2d = new Grid2<string>(2, 2);
             var value = "TestValue";
 
             // Act
@@ -51,7 +51,7 @@ namespace Ugtk.Tests.Collections
         public void Indexer_ShouldThrowIndexOutOfRangeException_WhenAccessingInvalidIndex()
         {
             // Arrange
-            var array2d = new Array2d<int>(2, 2);
+            var array2d = new Grid2<int>(2, 2);
 
             // Act & Assert
             Check.ThatCode(() => array2d[2, 2] = 42)
@@ -63,7 +63,7 @@ namespace Ugtk.Tests.Collections
         {
             // Arrange
 
-            var array2d = new Array2d<int>(2, 2);
+            var array2d = new Grid2<int>(2, 2);
             array2d[0, 0] = 1;
             array2d[1, 0] = 2;
             array2d[0, 1] = 3;

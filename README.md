@@ -5,4 +5,9 @@
 ### Collections
 
     - Bag : A List with fast removing but no consistency indexing
-    - Array2D : A generic 2d array
+    - Grid2 : A generic 2d array
+    - NamedBag : A dictionary with a string key associated to a generic value
+
+### Types
+
+    - Size : A struct to represent a size with width and height
