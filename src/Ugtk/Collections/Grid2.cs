@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace Ugtk.Collections;
 
@@ -8,7 +9,7 @@ namespace Ugtk.Collections;
 /// Store objects in a 2 dimensional array
 /// </summary>
 /// <typeparam name="T">The type of object to store in the array</typeparam>
-public sealed class Array2d<T> : IEnumerable<T>
+public sealed class Grid2<T> : IEnumerable<T>
 {
     private readonly T[] _items;
 
@@ -39,17 +40,24 @@ public sealed class Array2d<T> : IEnumerable<T>
     /// </summary>
     /// <param name="columnsCount">The number of columns</param>
     /// <param name="rowsCount">The number of rows</param>
-    /// <exception cref="ArgumentException"></exception>
-    public Array2d(int columnsCount, int rowsCount)
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
+    public Grid2(int columnsCount, int rowsCount)
     {
-        if (columnsCount <= 0) throw new ArgumentException("The number of columns must be greater than zero", nameof(columnsCount));
-        if (rowsCount <= 0) throw new ArgumentException("The number of rows must be greater than zero", nameof(rowsCount));
+        if (columnsCount <= 0) throw new ArgumentOutOfRangeException("The number of columns must be greater than zero", nameof(columnsCount));
+        if (rowsCount <= 0) throw new ArgumentOutOfRangeException("The number of rows must be greater than zero", nameof(rowsCount));
 
         _items = new T[columnsCount * rowsCount];
         ColumnsCount = columnsCount;
         RowsCount = rowsCount;
     }
 
+    /// <summary>
+    /// Contruct a new 2d array
+    /// </summary>
+    /// <param name="size">The size of the array</param>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
+    public Grid2(Size size) : this(size.Width, size.Height) { }
+    
     /// <summary>
     /// Get the array enumerator
     /// </summary>
