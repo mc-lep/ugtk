@@ -4,10 +4,12 @@
 
 ### Collections
 
-    - Bag : A List with fast removing but no consistency indexing
-    - Grid2 : A generic 2d array
-    - NamedBag : A dictionary with a string key associated to a generic value
-
+    - SpriteAtlas : A collection of sprites which can be retreived by name
+    
 ### Types
 
-    - Size : A struct to represent a size with width and height
+    - Sprite : A struct to represent a sprite
+
+### Extensions
+
+    - BatcherExtensions : Enrich the batcher with methods to draw sprites

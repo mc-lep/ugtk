@@ -2,10 +2,15 @@
 
 	<PropertyGroup>
 		<IsPackable>true</IsPackable>
+		<PackageId>Ugtk.Foster</PackageId>
 	</PropertyGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="FosterFramework" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Ugtk\Ugtk.csproj" />
 	</ItemGroup>
 	
 </Project>

@@ -2,6 +2,7 @@
 
 	<PropertyGroup>
 		<IsPackable>true</IsPackable>
+		<PackageId>Ugtk</PackageId>
 	</PropertyGroup>
 
 </Project>

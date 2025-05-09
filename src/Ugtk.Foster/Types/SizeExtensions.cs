@@ -1,5 +1,5 @@
 ﻿using Foster.Framework;
-using System.Drawing;
+using Ugtk.Types;
 
 namespace Ugtk.Foster.Types;
 
